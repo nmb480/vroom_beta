@@ -1,0 +1,33 @@
+<div class="tweets flex scroll">
+
+  <% tweets.each do |tweet| %>
+  <div class="tweet">
+    <div class="tweet_header flex">
+
+      <div class="tweet_icon"><%= image_tag(tweet[:icon]) %></div>
+
+      <div class="tweet_header_name flex">
+        <div class="tweet_name"><%= link_to(tweet[:name], tweet[:userUrl]) %></div>
+        <div class="tweet_screen_name">@<%= tweet[:screenName] %></div>
+      </div>
+
+      <div class="twitter_icon"><%= link_to tweet[:tweetUrl] do %>
+        <i class="fab fa-twitter fa-lg"></i>
+      <% end %></div>
+
+    </div><!-- tweet_header -->
+
+    <div class="tweet_text"><%= simple_format(tweet[:text]) %></div>
+
+    <% if tweet[:items] %>
+    <div class="tweet_item_list flex">
+      <% tweet[:items].each do |item| %>
+        <div class="tweet_item"><%= image_tag(item) %></div>
+      <% end %>
+    </div>
+    <% end %>
+
+  </div>
+  <% end %>
+
+</div>

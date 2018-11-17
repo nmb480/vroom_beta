@@ -1,0 +1,43 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.4/ext/msgpack
+/home/vagrant/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20180527-9309-imshyo.rb extconf.rb
+checking for ruby/st.h... yes
+checking for st.h... yes
+checking for rb_str_replace() in ruby.h... yes
+checking for rb_intern_str() in ruby.h... yes
+checking for rb_sym2str() in ruby.h... yes
+checking for rb_str_intern() in ruby.h... yes
+checking for rb_block_lambda() in ruby.h... yes
+checking for rb_hash_dup() in ruby.h... yes
+checking for rb_hash_clear() in ruby.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/msgpack-1.2.4/mkmf.log
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.4/ext/msgpack
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.4/ext/msgpack
+make "DESTDIR="
+compiling packer_ext_registry.c
+compiling buffer.c
+compiling extension_value_class.c
+compiling unpacker.c
+compiling rbinit.c
+compiling buffer_class.c
+compiling factory_class.c
+compiling rmem.c
+compiling unpacker_ext_registry.c
+compiling unpacker_class.c
+unpacker_class.c:219: 警告: ‘Unpacker_peek_next_type’ defined but not used
+compiling packer_class.c
+compiling packer.c
+packer.c: In function ‘msgpack_packer_write_other_value’:
+packer_ext_registry.h:85: 警告: ‘lookup_class’ may be used uninitialized in this function
+packer_ext_registry.h:85: note: ‘lookup_class’ was declared here
+linking shared-object msgpack/msgpack.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/msgpack-1.2.4/ext/msgpack
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20180527-9309-12zztgo/msgpack

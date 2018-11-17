@@ -1,0 +1,81 @@
+
+<div class="admins_index flex">
+
+    <div class="channels_box flex">
+
+      <% @channels.each do |channel| %>
+
+        <div class="channel j_content flex" id="<%= channel.id %>">
+          <div class="channel_top flex">
+
+            <div class="channel_image">
+              <div class="channel_icon" value="<%= channel.thumbnail %>"><%= image_tag(channel.thumbnail) %></div>
+            </div>
+
+            <div class="channel_info">
+              <div class="channel_title" value="<%= channel.channelTitle %>"><%= channel.channelTitle %></div>
+              <div class="channel_name" value="<%= channel.name %>"><%= channel.name %></div>
+
+              <div class="channel_twitter">
+                <% channel.channel_twitters.each do |twitter| %>
+                  <div class="channel_twitterid">@<%= twitter.screenName %></div>
+                <% end %>
+                <% channel.channel_hashtags.each do |hashtag| %>
+                  <div class="channel_hashtag">#<%= hashtag.hashtag %></div>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="channel_bottom flex">
+            <div class="editChannelPage btn"><%= link_to "編集する", edit_admin_path(channelId: channel.channelId) %></div>
+          </div>
+
+          </div><!-- channel_info01 -->
+
+      <% end %>
+      <%= paginate @channels %>
+
+    </div>
+
+    <div class="sidebar flex">
+
+      <div class="sidebar_content update_area">
+        <div class="btn">
+          <%= link_to action: :updateLives, data: { confirm: "本当に更新しますか?" }  do %>
+            配信情報を更新する
+          <% end %>
+        </div>
+        <div class="btn">
+          <%= link_to action: :updateMovies  do %>
+            最新動画を更新する
+          <% end %>
+        </div>
+        <div class="btn">
+          <%= link_to action: :updateChannels  do %>
+            チャンネル情報を更新する
+          <% end %>
+        </div>
+      </div>
+
+      <div class="sidebar_content register_form">
+        <h3>新規登録</h3>
+          <div class="form_box">
+            <%= form_for(@channel) do |f| %>
+              <div class="field flex">
+                <div class="label"><%= f.label :name, "名前" %></div>
+                <div class="f_area"><%= f.text_area :name, class: 'textarea', rows: 1, placeholder: 'Vtuber' %></div>
+              </div>
+              <div class="field">
+                <div class="label"><%= f.label :channelId, "チャンネルID" %></div>
+                <div class="f_area"><%= f.text_area :channelId, class: 'textarea', rows: 1, placeholder: 'ChannelId' %></div>
+              </div>
+              <div class="f_btn"><%= f.submit '登録', class: 'form_btn' %></div>
+            <% end %>
+          </div>
+        </div>
+
+    </div>
+
+</div>

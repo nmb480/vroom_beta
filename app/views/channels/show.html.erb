@@ -1,0 +1,100 @@
+<div class="channel_show contents">
+
+  <div class="channel_page section">
+    <div class="channel_show_info flex">
+      <div class="channel_show_info_container flex">
+
+        <div class="channel_info_li channel_image">
+          <div class="channel_icon"><%= image_tag(@vtuber.thumbnail, :alt => "icon") %></div>
+        </div>
+
+        <div class="channel_info_li channel_info">
+          <div class="channel_name"><%= @vtuber.name %></div>
+          <div class="channel_title"><%= @vtuber.channelTitle %></div>
+          <div class="channel_subscribers">チャンネル登録者数:<span class="bold"><%= number_with_delimiter(@vtuber.channel_statistic.subscriberCount) %></span></div>
+          <div class="channel_publishedAt">Since.<%= @vtuber.publishedAt.strftime("%Y/%m/%d")  %></div>
+        </div>
+
+      </div><!-- channel_info -->
+
+      <div class="channel_youtube">
+        <div class="btn_youtube"><%= link_to "▶ チャンネルページへ", "https://www.youtube.com/channel/#{@vtuber.channelId}" %></div>
+      </div>
+    </div>
+
+    <div class="channel_discription scroll"><%= simple_format(@vtuber.description) %></div>
+
+  </div><!-- channel_info -->
+
+
+  <div class="channel_movie section">
+    <h3>最新の投稿</h3>
+
+    <div class="channel_movie_content flex">
+      <% @movies.each do |movie| %>
+
+        <div class="movie_box flex">
+          <div class="movie_sumbnail"><%= link_to image_tag(movie.thumbnail, :alt => "サムネ"), "https://www.youtube.com/watch?v=#{movie.videoId}", :target=>["_blank"] %></div>
+          <div class="movie_info">
+            <div class="movie_title"><%=link_to movie.title, "https://www.youtube.com/watch?v=#{movie.videoId}", :target=>["_blank"] %></div>
+            <!-- <div class="movie_channel"><%= link_to movie.channel.channelTitle, channel_path(movie.channel.channelId) %></div> -->
+          </div>
+        </div>
+      <% end %>
+
+    </div><!-- channel_movie_content -->
+  </div><!-- channel_movie -->
+
+  <div class="twitter section">
+    <h3>Twitter</h3>
+    <div class="twitter_setting"><%= link_to '[編集]', new_channel_twitter_path(:id => @vtuber.channelId) %></div>
+
+    <div class="twitter_timeline flex">
+
+      <div class="channel_tweets channel_timeline">
+        <% if @channel_tweets[2][0] != nil %>
+          <div class="tags flex">
+            <% @channel_tweets[2].each do |tweet| %>
+              <div class="twitter_tab j_tab" value="<%= tweet[1] %>">@<%= tweet[1] %></div>
+            <% end %>
+          </div>
+          <% @channel_tweets[2].each do |tweet| %>
+            <div class="channel_tweet timeline j_content <%= tweet[0] %>" id="" value="<%= tweet[1] %>">
+              <%= render 'twitter', tweets: tweet[2] %>
+            </div>
+          <% end %>
+        <% else %>
+          現在登録されているアカウントはありません。
+        <% end %>
+      </div>
+
+
+      <div class="channel_hashtags channel_timeline">
+        <% if @tag_tweets[2][0] != nil %>
+          <div class="tags flex">
+            <% @tag_tweets[2].each do |tweet| %>
+              <div class="twitter_tab j_tab" value="<%= tweet[1] %>">#<%= tweet[1] %></div>
+            <% end %>
+          </div>
+          <% @tag_tweets[2].each do |tweet| %>
+            <div class="channel_hashtag timeline j_content <%= tweet[0] %>" value="<%= tweet[1] %>">
+              <%= render 'twitter', tweets: tweet[2] %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        現在登録されているハッシュタグはありません。
+      <% end %>
+
+    </div>
+
+
+    </div>
+  </div>
+
+
+  <!--<%= debug @hash_tag %>-->
+  <!-- <%= debug @channel_tweets %> -->
+  <!--<%= debug @tag_tweets[1] %>-->
+
+</div>

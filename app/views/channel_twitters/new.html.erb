@@ -1,0 +1,69 @@
+<div class="channel_twitter_content">
+  <div class="twitter_new_form">
+    <%= @twitterid %>
+    <div class="twitter_form channel_twitter_form">
+
+      <% if @twitters %>
+        現在登録されている@アカウント
+        <div class="registed_index flex">
+          <% @twitters.each do |twitter| %>
+            <div class="registed_li registed_screen_name flex">
+              <div class="registed_item registed_hashtag">@<%= twitter.screenName %></div>
+              <div class="delete_btn"><%= link_to "[削除]",channel_twitter_path(twitter, :id => twitter.id, :channel_id => twitter.channel_id, :regist_type => "screenName"), :method => :delete, class: 'btn-xs' %></div>
+            </div>
+
+          <% end %>
+        </div>
+      <% else %>
+        このチャンネルに登録されているTwitterアカウントはありません。
+      <% end %>
+
+      <%= form_for(@channel_twitter) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :screenName, class: 'textarea', rows: 1, placeholder: 'アカウント名を入力' %>
+        </div>
+        <div class="form-group">
+          <%= f.hidden_field :channelId, :value => @channel.channelId %>
+          <%= hidden_field_tag :regist_type, 'screenName' %>
+        </div>
+
+        <%= f.submit 'アカウントを追加する', class: 'form_btn' %>
+        ※@は必要ありません。
+      <% end %>
+
+    </div><!--  channel_twitter -->
+
+    <div class="twitter_form hashtag_form">
+
+      <% if @hashtags %>
+        現在登録されてる#ハッシュタグ
+        <div class="registed_index flex">
+          <% @hashtags.each do |hashtag| %>
+            <div class="registed_li registed_hashtag flex">
+              <div class="registed_item registed_hashtag">#<%= hashtag.hashtag %></div>
+              <div class="delete_btn" ><%= link_to "[削除]",channel_twitter_path(hashtag, :id => hashtag.id, :channel_id => hashtag.channel_id, :regist_type => "hashtag"), :method => :delete, class: 'btn-xs' %></div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        このチャンネルに登録されているハッシュタグはありません。
+      <% end %>
+
+      <%= form_for(@channel_hashtag, url: {controller: channel_twitters_path, action: "create"}) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :hashtag, class: 'textarea', rows: 1, placeholder: 'ハッシュタグを入力' %>
+        </div>
+        <div class="form-group">
+          <%= f.hidden_field :channelId, :value => @channel.channelId %>
+          <%= hidden_field_tag :regist_type, 'hashtag' %>
+        </div>
+        <%= f.submit 'ハッシュタグを追加する', class: 'form_btn' %>
+        ※#は必要ありません。
+      <% end %>
+
+    </div><!--  hashtag -->
+
+  </div>
+  <div class="back_to"><%= link_to '← チャンネルページへ戻る', channel_path(@channel.channelId) %></div>
+  <%= @test %>
+</div>

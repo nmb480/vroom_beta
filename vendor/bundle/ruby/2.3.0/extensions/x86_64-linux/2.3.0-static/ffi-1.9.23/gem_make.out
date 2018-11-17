@@ -1,0 +1,53 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.23/ext/ffi_c
+/home/vagrant/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20180527-9309-1ws024r.rb extconf.rb
+checking for ffi_call() in -lffi... yes
+checking for ffi_closure_alloc()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for shlwapi.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... no
+creating extconf.h
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/ffi-1.9.23/mkmf.log
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.23/ext/ffi_c
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.23/ext/ffi_c
+make "DESTDIR="
+compiling MappedType.c
+compiling DynamicLibrary.c
+compiling AbstractMemory.c
+compiling Variadic.c
+compiling Type.c
+compiling Buffer.c
+compiling Function.c
+compiling Thread.c
+compiling StructLayout.c
+compiling Types.c
+compiling MemoryPointer.c
+compiling LongDouble.c
+compiling StructByValue.c
+compiling Platform.c
+compiling DataConverter.c
+compiling StructByReference.c
+compiling LastError.c
+compiling MethodHandle.c
+compiling ArrayType.c
+compiling Struct.c
+compiling FunctionInfo.c
+compiling Pointer.c
+compiling ffi.c
+compiling Closure.c
+compiling Call.c
+linking shared-object ffi_c.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.23/ext/ffi_c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20180527-9309-tmckal

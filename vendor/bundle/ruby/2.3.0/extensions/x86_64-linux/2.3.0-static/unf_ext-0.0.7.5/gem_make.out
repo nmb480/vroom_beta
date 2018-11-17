@@ -1,0 +1,22 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.5/ext/unf_ext
+/home/vagrant/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20180527-9309-1u5egwb.rb extconf.rb
+checking for main() in -lstdc++... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/unf_ext-0.0.7.5/mkmf.log
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.5/ext/unf_ext
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.5/ext/unf_ext
+make "DESTDIR="
+compiling unf.cc
+cc1plus: 警告: command line option "-Wdeclaration-after-statement" is valid for C/ObjC but not for C++
+cc1plus: 警告: command line option "-Wimplicit-function-declaration" is valid for C/ObjC but not for C++
+linking shared-object unf_ext.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.5/ext/unf_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20180527-9309-cd5id5

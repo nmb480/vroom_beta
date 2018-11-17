@@ -1,0 +1,43 @@
+<div class="channels_index">
+  <div class="search_form">
+    <input type="form" class="focus" id="channel_search_form" placeholder="検索">
+    <div class="invisible focus_inv" id="result"></div>
+  </div>
+  <% @vtubers.each do |channel| %>
+
+    <div class="channel_index_info_container flex">
+
+        <div class="channel_image">
+          <div class="channel_icon"><%= link_to image_tag(channel.thumbnail), channel_path(channel.channelId) %></div>
+        </div>
+
+        <div class="channel_info info-channel">
+          <div class="channel_name"><%= link_to channel.name, channel_path(channel.channelId) %></div>
+          <div class="channel_title"><%= link_to channel.channelTitle, "https://youtube.com/channel/#{channel.channelId}" %></div>
+          <div class="channel_twitter">
+            <% channel.get_channel_twitters(channel.channelId).each do |twitter| %>
+              <div class="channel_twitter_li"><%= link_to '@'+twitter, "https://twitter.com/#{twitter}" %> </div>
+            <% end %>
+          </div>
+        </div>
+
+        <table class="channel_info info-statistics">
+          <tr>
+            <td class="channel_subscribers">チャンネル登録者数</td>
+            <td class="bold">：<%= number_with_delimiter(channel.channel_statistic.subscriberCount) %></td>
+          </tr>
+          <tr>
+            <td class="channel_views">チャンネル総再生回数</td>
+            <td class="bold">：<%= number_with_delimiter(channel.channel_statistic.viewCount) %></td>
+          </tr>
+          <tr>
+            <td class="channel_movies">投稿した動画の数</td>
+            <td class="bold">：<%= number_with_delimiter(channel.channel_statistic.videoCount) %></td>
+          </tr>
+        </table>
+
+      </div><!-- channel_info01 -->
+
+  <% end %>
+  <%= paginate @vtubers %>
+</div>

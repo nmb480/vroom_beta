@@ -1,0 +1,18 @@
+<header>
+  <div class="header flex">
+    <div class="mainlogo">
+      <h1><%= link_to 'VRoom', root_path, class: 'roboto' %></h1>
+    </div>
+
+    <div class="navbar flex">
+      <div class="navbar_pc_li btn">
+        <%= link_to channels_path do %>
+          <i class="fas fa-user"></i>登録Vtuber一覧(<%= Channel.count %>)
+        <% end %>
+      </div>
+    </div>
+    <% if current_user.present? %>
+      <%= current_user.name %>
+    <% end %>
+
+</header>

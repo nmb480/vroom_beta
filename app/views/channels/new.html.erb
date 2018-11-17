@@ -1,0 +1,5 @@
+<%= form_for(@vtuber, :url => channels_path,) do |f| %>
+  <%= f.text_area :name, class: 'textarea', rows: 1, placeholder: 'Vtuber' %>
+  <%= f.text_area :channelId, class: 'textarea', rows: 1, placeholder: 'ChannelId' %>
+  <%= f.submit '登録', class: 'form_btn' %>
+<% end %>

@@ -1,0 +1,1102 @@
+@charset "utf-8";
+
+/*
+        変数指定・クラス設定
+================================================================ */
+/*  ブレークポイント  */
+$spsize: '545px';
+
+$max-width:      '1280px';
+$six-sevenths:   '1075px';
+$five-sevenths:  '895px';
+$four-sevenths:  '720px';
+$three-sevenths: '545px';
+
+/*  色指定  */
+$MainColor: #222222;
+$SubColor: red;
+
+/*  class設定  */
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex {
+  display: flex;
+  display: -webkit-flex; /* Safari */
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.scroll::-webkit-scrollbar{
+  width: 12px;
+}
+.scroll::-webkit-scrollbar-track{
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 2px #777;
+}
+.scroll::-webkit-scrollbar-thumb{
+  background: #aaa;
+  border-radius: 10px;
+  box-shadow: none;
+}
+.no-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+.section {
+  margin-top: 2em;
+}
+
+.invisible {
+  display: none;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.btn{
+  a {
+    display: inline-block;
+  }
+}
+
+.channel_icon {
+  img{
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+  }
+}
+
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+button,
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+/*
+        共通部分
+================================================================ */
+
+/*  body  */
+body {
+  font-size: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contents {
+  max-width: 100%;
+  margin: 0 auto;
+
+  @media screen and (min-width: $three-sevenths){
+    max-width: 528px;
+  }
+  @media screen and (min-width: $four-sevenths){
+    max-width: 703px;
+  }
+  @media screen and (min-width: $five-sevenths){
+    max-width: 878px;
+  }
+  @media screen and (min-width: $six-sevenths){
+    max-width: 1055px;
+  }
+  @media screen and (min-width: $max-width){
+    max-width: 1232px;
+  }
+}
+
+
+/*  header  */
+header {
+  background-color: #000000;
+}
+.header {
+  width: 100%;
+  line-height: 50px;
+  background-color: #000000;
+  .mainlogo {
+    margin-left: 30px;
+    h1{
+      a{
+        color: #ffffff;
+      }
+    }
+  }
+
+  .navbar {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: 20px;
+
+    .navbar_pc_li {
+      line-height: 24px;
+      margin-top: 8px;
+
+      a {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        border: .5px #ffffff solid;
+        border-radius: 2px;
+        color: #ffffff;
+        transition: .4s;
+        font-size: 12px;
+
+        i {
+          color: #ffffff;
+          margin-right: .5em;
+          transition: .4s;
+        }
+
+        &:hover {
+          background-color: #ffffff;
+          color: #000000;
+          i {
+            color: #000000;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $spsize) {
+      margin-right: 30px;
+
+      .navbar_pc_li {
+        line-height: 30px;
+        margin-top: 5px;
+
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+/*  footer  */
+.footer {
+  background-color: #eeeeee;
+  padding: 20px;
+  margin-top: 20px;
+  color: gray;
+
+  a {
+    color: gray;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  .footer_menu {
+    margin: 0 auto;
+    justify-content: center;
+
+    .footer_menu_li {
+      padding: .3em 1em;
+      &:not(:first-child) {
+        border-left: gray .5px solid;
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* body
+================================================================ */
+.movie_box {
+  .movie_sumbnail {
+    img {
+      width: 120px;
+      height: 68px;
+    }
+  }
+  .movie_info {
+    flex-direction: column;
+  }
+  .movie_title, .movie_channel {
+    font-size: 12px;
+  }
+
+  .movie_title {
+    padding-right: 15px;
+    height: 35px;
+    overflow: hidden;
+    a{
+      font-weight: bold;
+      letter-spacing: -0.05em;
+    }
+  }
+
+  .movie_channel {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    a {
+      color: gray;
+    }
+  }
+  .movie_channel :hover {
+    color: black;
+  }
+
+  @media screen and (min-width: $spsize) {
+    display: block;
+    width: 170px;
+    height: 150px;
+    margin: .5em .2em;
+
+    .movie_sumbnail {
+      text-align: center;
+      width: 170px;
+      height: auto;
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 102px;
+        img{
+          width: 170px;
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+/*  toppage
+-------------------------------------------- */
+.contents_li {
+  margin-top: 20px;
+  height: auto;
+
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .contents_li_movie {
+    flex-direction: column;
+    @media screen and (min-width: $spsize){
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+  }
+
+
+  .contents_li_live {
+    .no_lives {
+      padding-top: 10px;
+      min-height: 60px;
+      p {
+        vertical-align: middle;
+      }
+
+      @media screen and (min-width: $spsize){
+        height: 140px;
+      }
+
+    }
+  }
+
+}
+
+.no_content {
+  height: 100px;
+  padding-top: 20px;
+}
+
+/*  channels.index
+-------------------------------------------- */
+
+.channels_index {
+  width: 90%;
+  margin: auto;
+  .search_form {
+    margin-top: 20px;
+    margin-left: 50px;
+
+    #channel_search_form {
+      font-size: 16px;
+      width: 300px;
+      height: 30px;
+      border: 1px solid #999;
+      padding-left: 5px;
+
+      &:focus {
+        box-shadow: 0 0 1px inset;
+      }
+    }
+
+    #result {
+      position: absolute;
+      width: 300px;
+      background-color: #fff;
+      box-shadow: 0 0 3px;
+      display: hidden;
+
+      .result_li {
+        list-style: none;
+        width: 100%;
+        height: 30px;
+        position: relative;
+
+        a {
+          display: block;
+          padding-left: 5px;
+          line-height: 30px;
+          width: 100%;
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+        }
+      }
+    }
+  }
+
+  .channel_index_info_container {
+    border-bottom: .5px solid #000000;
+    padding: .5em 0;
+
+    .channel_info {
+      margin-left: 1em;
+    }
+
+    .info-channel{
+      width: 25%;
+      padding-top: 1em;
+
+      .channel_name {
+        font-size: 18px;
+        line-height: 1.3em;
+        transition-duration: 500ms;
+      }
+      .channel_title {
+        font-size: 12px;
+        line-height: 1em;
+        a {
+          color: gray;
+          font-weight: bold;
+        }
+      }
+      .channel_title :hover {
+        color: red;
+      }
+    }
+
+    .info-statistics {
+      font-size: 12px;
+      padding-top: 1em;
+    }
+
+    .channel_twitter {
+      flex-direction: column;
+      font-size: 12px;
+
+      .channel_twitter_li {
+        font-size: 12px;
+      }
+      .channel_twitter_li :hover {
+        color: #4AB3F4;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.last, .next, .prev, .first, .page {
+  font-weight: bold;
+
+  a {
+    color: gray;
+  }
+  & a:hover {
+    color: red;
+  }
+}
+
+
+/*  channels.show
+-------------------------------------------- */
+.channel_page{
+  margin-top: 1em;
+
+  .channel_show_info {
+    flex-direction: column;
+
+    @media screen and (min-width: $spsize){
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .channel_show_info_container {
+      height: 120px;
+      margin: 1em 0;
+
+      &:last-child {
+        margin-left: auto;
+      }
+
+      .channel_icon {
+        img {
+        height: 120px;
+        }
+      }
+
+      .channel_info{
+        padding-left: 1em;
+        padding-top: 1.5em;
+        min-width: 185px;
+
+        .channel_name {
+          font-size: 24px;
+          line-height: 1.1em;
+        }
+
+        .channel_title {
+          font-size: 12px;
+          color: gray;
+          font-weight: bold;
+        }
+
+        .channel_publishedAt {
+          color: gray;
+          font-size: 12px;
+        }
+
+      }
+
+      .channel_subscribers {
+        font-size: 12px;
+        line-height: 1em
+      }
+
+    }
+
+    .channel_youtube {
+      .btn_youtube {
+        border: 1px solid red;
+        background-color: red;
+        border-radius: 3px;
+        text-align: center;
+        transition-duration: 300ms;
+        line-height: 30px;
+        margin: .3em 1.5em;
+
+        a{
+          color: #ffffff;
+          display: block;
+          font-weight: bold;
+          font-size: 12px;
+          width: 100%;
+        }
+
+        &:hover{
+          border: 1px solid red;
+          background-color: #ffffff;
+           a{
+             color: red;
+           }
+        }
+      }
+
+
+      @media screen and (min-width: $spsize){
+        position: relative;
+        width: 250px;
+
+        .btn_youtube{
+          height: 45px;
+          width: 140px;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          position: absolute;
+          margin: auto;
+
+
+          a{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+          }
+
+        }
+
+      }
+
+    }
+  }
+
+
+
+  .channel_discription{
+    padding:.5em 1em;
+    font-size: 14px;
+    background-color: #F5F5F5;
+    height: 10em;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.channel_page {
+  .channel_info_container {
+    margin-bottom: 1.5em;
+  }
+}
+
+.channel_movie_content {
+  // height: 400px;
+  flex-direction: column;
+  overflow: hidden;
+
+  @media screen and (min-width: $spsize) {
+    height: 170px;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+}
+
+
+
+.tweets {
+
+  flex-direction: column;
+  height: 1000px;
+  overflow: scroll;
+  overflow-x: hidden;
+  width:100%;
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .tweet{
+    border-bottom: solid .5px gray;
+    padding: .2em .2em;
+
+    .tweet_header {
+
+      .tweet_icon{
+
+        img{
+          border-radius: 24px;
+        }
+      }
+
+      .tweet_header_name {
+        flex-direction: column;
+        justify-content: center;
+        margin-left: .3em;
+
+        .tweet_name{
+
+        }
+
+        .tweet_screen_name {
+          font-size: 14px;
+          color: gray;
+        }
+      }
+
+      .twitter_icon {
+        margin-left: auto;
+        margin-top: .4em;
+        margin-right: .4em;
+
+        i {
+          color: #34abf3;
+        }
+      }
+    }
+
+
+    .tweet_text {
+      font-size: 14px;
+    }
+
+    .tweet_item_list {
+      flex-wrap: wrap;
+
+      .tweet_item {
+
+        img{
+          max-width:100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.channel_tweets, .channel_hashtags {
+  width: 90%;
+  margin: 0 5px;
+
+  @media screen and (min-width: $spsize) {
+    width: 50%;
+  }
+}
+
+.timeline {
+  border-top: solid 1px #000000;
+  border-bottom: solid 1px #000000;
+  padding: .2em 0;
+}
+.twitter_timeline {
+  flex-direction: column;
+
+  @media screen and (min-width: $spsize) {
+    flex-direction: row;
+  }
+
+  .channel_timeline {
+
+    .tags {
+      height: 25px;
+
+      .twitter_tab {
+        display: block;
+        color: #ffffff;
+        background-color: red;
+        padding: .2em .1em;
+        border-bottom: none;
+        border-radius: 5px 5px 0 0;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .hashtag:hover {
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+/*  channel_twitter.new
+-------------------------------------------- */
+.channel_twitter_content {
+  width: 70%;
+  max-width: 500px;
+  margin: 30px auto;
+
+  .twitter_new_form {
+    border: .5px #000000 solid;
+    border-radius: 7px;
+    padding: 0 1em;
+
+    .twitter_form {
+      width: 100%;
+      padding: 1em 0;
+
+      .form_btn {
+        width: 100%;
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        background-color: #ffffff;
+        color: red;
+        border: solid 2px red;
+        border-radius: 3px;
+        transition: .4s;
+      }
+      .form_btn:hover {
+        background: red;
+        color: white;
+      }
+      textarea {
+        width: 100%;
+        line-height: 1.5em;
+        border: 1px solid black;
+        border-radius: 5px;
+        resize: none;
+        font-size: 16px;
+      }
+
+      .registed_index {
+        flex-direction: column;
+
+        .registed_li {
+          width: 100%;
+
+          .delete_btn {
+            font-size: 10px;
+            margin-left: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.channel_twitter_form {
+  border-bottom: .5px solid gray;
+}
+
+/*  admins.index
+-------------------------------------------- */
+.admins_index{
+  width: 1280px;
+  margin: auto;
+
+  .sidebar {
+    width: 400px;
+    flex-direction: column;
+
+    .sidebar_content{
+      width: 100%;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    .update_area{
+
+      .btn {
+        margin-top: 5px;
+
+        a {
+          width: 270px;
+          height: 20px;
+          font-size: 20px;
+          font-weight: bold;
+          display: inline-block;
+          padding: 0.3em 1em;
+          text-decoration: none;
+          background-color: red;
+          border: .5px #ffffff solid;
+          border-radius: 5px;
+          color: #ffffff;
+          transition: .4s;
+          font-size: 12px;
+          text-align: center;
+
+          &:hover {
+            background-color: #ffffff;
+            color: red;
+            border: .5px red solid;
+          }
+        }
+      }
+    }
+
+    .register_form{
+      .form_box {
+        .field{
+          flex-direction: column;
+          .label{
+          }
+          .f_area{
+
+            .textarea {
+              border-radius: 5px;
+              border: solid .8px #000000;
+              padding: 5px 8px;
+              margin-top: 5px;
+              width: 270px;
+
+              &:focus {
+                border: red solid .8px;
+                box-shadow: 0 0 5px red;
+              }
+            }
+          }
+        }
+
+        .f_btn {
+          width: 100%;
+
+          .form_btn {
+            width: 100%;
+            border-radius: 3px;
+            background-color: #777;
+            color: #fff;
+            padding: 3px 5px;
+            margin: 5px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #999;
+            }
+
+            &:active {
+              background-color: #aaa;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .channels_box{
+    flex-wrap: wrap;
+    width: 100%;
+
+      .channel{
+        width: 280px;
+        height: 150px;
+        border-radius: 5px;
+        background-color: #f3f3f3;
+        padding: 10px 10px 0;
+        flex-direction: column;
+        margin: 5px 10px;
+
+        .channel_top{
+          height: 130px;
+
+          .channel_image{
+            .channel_icon{
+              img{
+                height: 60px;
+              }
+            }
+          }
+          .channel_info{
+            padding: 4px;
+            .channel_name {
+              font-weight:bold;
+            }
+            .channel_title {
+              font-size: 12px;
+              font-weight: bold;
+              color: gray;
+            }
+          }
+        }
+        .channel_bottom {
+          flex-direction: row-reverse;
+          .goToChannelPage, .editChannelPage{
+
+          }
+          .btn{
+            a{
+              width: 100%;
+              border: none;
+
+              &:hover {
+                text-decoration:underline;
+              }
+            }
+          }
+        }
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
+  }
+
+}
+
+/*  admins.edit
+-------------------------------------------- */
+.admins_edit{
+  .edit_box {
+    flex-direction: column;
+    margin: 10px auto;
+    width: 500px;
+
+    .edit_box_head {
+      .channel_image {
+        .channel_icon {
+          img {
+            height: 60px;
+          }
+        }
+      }
+      .channel_info {
+        margin-left: 10px;
+
+        .channel_title {
+          font-weight: bold;
+
+          color: gray;
+        }
+        .channel_name {
+          .channel_name_pre {
+            height: 14px;
+            font-weight: bold;
+          }
+
+          .edit_form {
+
+            width: 100%;
+
+            .f_textarea {
+
+              .textarea {
+                border-radius: 5px;
+                border: solid .8px #000000;
+                padding: 5px 8px;
+                margin-top: 5px;
+
+                &:focus {
+                  border: red solid .8px;
+                  box-shadow: 0 0 5px red;
+                }
+              }
+            }
+
+            .f_btn {
+
+              .form_btn {
+                border-radius: 3px;
+                background-color: #777;
+                color: #fff;
+                padding: 5px 8px;
+                margin: 5px;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: #999;
+                }
+
+                &:active {
+                  background-color: #aaa;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .edit_box_main {
+      flex-direction: column;
+
+      .edit_twitter {
+        margin-top: 20px;
+
+        .twitter_li {
+          width: 300px;
+          margin-left: 10px;
+
+          .delete_btn {
+            margin-left: 10px;
+            a {
+              font-weight: bold;
+              display: inline-block;
+              padding: 0.1em 1em;
+              text-decoration: none;
+              background-color: red;
+              border: .5px #ffffff solid;
+              border-radius: 5px;
+              color: #ffffff;
+              transition: .4s;
+              font-size: 12px;
+              text-align: center;
+
+              &:hover {
+                background-color: #ffffff;
+                color: red;
+                border: .5px red solid;
+              }
+            }
+          }
+        }
+
+        .edit_form {
+
+          width: 100%;
+
+          .f_textarea {
+
+            .textarea {
+              border-radius: 5px;
+              border: solid .8px #000000;
+              padding: 8px 8px;
+              margin-top: 5px;
+              width: 200px;
+
+              &:focus {
+                border: red solid .8px;
+                box-shadow: 0 0 5px red;
+              }
+            }
+          }
+
+          .f_btn {
+
+            .form_btn {
+              border-radius: 3px;
+              background-color: #777;
+              color: #fff;
+              padding: 5px 8px;
+              margin: 5px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #999;
+              }
+
+              &:active {
+                background-color: #aaa;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .channel_delete_btn {
+      margin-top: 30px;
+
+      a {
+        font-size: px;
+        font-weight: bold;
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        background-color: gray;
+        border: .5px #ffffff solid;
+        border-radius: 5px;
+        color: #ffffff;
+        transition: .4s;
+        font-size: 12px;
+        text-align: center;
+
+        &:hover {
+          background-color: #ffffff;
+          color: gray;
+          border: .5px gray solid;
+        }
+      }
+    }
+  }
+}

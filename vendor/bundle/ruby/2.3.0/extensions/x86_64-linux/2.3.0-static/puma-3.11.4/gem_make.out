@@ -1,0 +1,30 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+/home/vagrant/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20180527-9309-1706vkf.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/puma-3.11.4/mkmf.log
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+make "DESTDIR="
+compiling io_buffer.c
+compiling http11_parser.c
+compiling puma_http11.c
+compiling mini_ssl.c
+mini_ssl.c: In function ‘engine_init_server’:
+mini_ssl.c:153: 警告: ISO C90 forbids mixed declarations and code
+mini_ssl.c:158: 警告: ISO C90 forbids mixed declarations and code
+mini_ssl.c:180: 警告: ISO C90 forbids mixed declarations and code
+mini_ssl.c:184: 警告: ISO C90 forbids mixed declarations and code
+linking shared-object puma/puma_http11.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20180527-9309-15jqfnl/puma

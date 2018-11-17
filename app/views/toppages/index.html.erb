@@ -1,0 +1,26 @@
+<div class="contents">
+  <div class="contents_li now_on_air">
+    <h2>現在放送中のチャンネル</h2>
+    <div class="contents_li_live contents_li_movie flex">
+      <% if @lives.blank? %>
+        <div class="no_lives">現在配信中のチャンネルはありません</div>
+      <% else %>
+        <%= render 'movie', movies: @lives %>
+      <% end %>
+    </div>
+
+
+  </div>
+
+  <div class="contents_li">
+    <h2>最近の投稿</h2>
+    <div class="contents_li_movie flex">
+      <%= render 'movie', movies: @movies %>
+    </div>
+  </div>
+
+  <div class="contents_li pick_up_vtuer">
+    <h2>Pick Up Vtuber</h2>
+    <div class="no_content">ただいま準備中です。今しばらくお待ちくださいm(_ _)m</div>
+  </div>
+</div>

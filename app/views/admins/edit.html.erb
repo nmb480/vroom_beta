@@ -1,0 +1,78 @@
+<div class="admins_edit">
+  <div class="edit_box flex">
+    <div class="edit_box_head flex">
+
+      <div class="channel_image">
+        <div class="channel_icon"><%= image_tag(@channel.thumbnail) %></div>
+      </div>
+
+      <div class="channel_info info-channel">
+        <div class="channel_title"><%= @channel.channelTitle %></div>
+        <div class="channel_name">
+          <div class="channel_name_pre"><%= @channel.name %></div>
+          <%= form_for @channel, html: {class: 'flex edit_form'} do |f| %>
+            <div class="f_textarea"><%= f.text_area :name, value: @channel.name, class: 'textarea', rows: 1  %></div>
+            <div class="f_btn"><%= f.submit '変更する', class: 'form_btn' %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="edit_box_main flex">
+
+      <div class="edit_channel_twitter edit_twitter">
+        <h4>登録中のツイッターアカウント</h2>
+        <% @channel.channel_twitters.all.each do |twitter| %>
+          <div class="twitter_li flex">
+            <div class="channel_twitter"><%= twitter.screenName %></div>
+            <div class="delete_btn"><%= link_to "削除",channel_twitter_path(twitter, :id => twitter.id, :channel_id => twitter.channel_id, :regist_type => "screenName"), :method => :delete, class: 'btn-xs' %></div>
+          </div>
+        <% end %>
+
+        <%= form_for @channel_twitter, html: {class: 'flex edit_form'} do |f| %>
+
+          <div class="form-group f_textarea">
+            <%= f.text_area :screenName, class: 'textarea', rows: 1, placeholder: 'アカウント名を入力' %>
+          </div>
+          <div class="form-group">
+            <%= f.hidden_field :channelId, :value => @channel.channelId %>
+            <%= hidden_field_tag :regist_type, 'screenName' %>
+          </div>
+          <div class="form-btn f_btn">
+            <%= f.submit 'アカウントを追加する', class: 'form_btn' %>
+          </div>
+
+        <% end %>
+
+      </div>
+
+      <div class="edit_hashtag edit_twitter">
+        <h4>登録中のハッシュタグ</h2>
+        <% @channel.channel_hashtags.all.each do |hashtag| %>
+          <div class="twitter_li flex">
+            <div class="channel_hashtag"><%= hashtag.hashtag %></div>
+            <div class="delete_btn" ><%= link_to "削除",channel_twitter_path(hashtag, :id => hashtag.id, :channel_id => hashtag.channel_id, :regist_type => "hashtag"), :method => :delete, class: 'btn-xs' %></div>
+          </div>
+        <% end %>
+
+        <%= form_for(@channel_hashtag, url: {controller: channel_twitters_path, action: "create"}, html: {class: 'flex edit_form'}) do |f| %>
+          <div class="form-group f_textarea">
+            <%= f.text_area :hashtag, class: 'textarea', rows: 1, placeholder: 'ハッシュタグを入力' %>
+          </div>
+          <div class="form-group">
+            <%= f.hidden_field :channelId, :value => @channel.channelId %>
+            <%= hidden_field_tag :regist_type, 'hashtag' %>
+          </div>
+          <div class="form-btn f_btn">
+            <%= f.submit 'ハッシュタグを追加する', class: 'form_btn' %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="channel_delete_btn"><%= link_to 'チャンネルを削除する', channel_path(@channel.id), method: :delete, class: 'confirm', data: { confirm: 'ほんとにぃ？' } %></div>
+    <%= link_to '一覧へ戻る', admins_path %>
+  </div>
+
+</div>

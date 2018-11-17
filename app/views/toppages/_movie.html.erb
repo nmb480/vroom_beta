@@ -1,0 +1,11 @@
+<% movies.each do |movie| %>
+
+  <div class="movie_box flex">
+    <div class="movie_sumbnail"><%= link_to image_tag(movie.thumbnail, :alt => "サムネ"), "https://www.youtube.com/watch?v=#{movie.videoId}", :target=>["_blank"] %></div>
+    <div class="movie_info">
+      <div class="movie_title"><%=link_to movie.title, "https://www.youtube.com/watch?v=#{movie.videoId}", :target=>["_blank"] %></div>
+      <div class="movie_channel"><%= link_to movie.channel.channelTitle, channel_path(movie.channel.channelId) %></div>
+    </div>
+  </div>
+
+<% end %>

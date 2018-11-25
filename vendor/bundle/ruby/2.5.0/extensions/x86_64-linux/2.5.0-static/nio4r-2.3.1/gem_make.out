@@ -1,0 +1,96 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.5.0/gems/nio4r-2.3.1/ext/nio4r
+/home/vagrant/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20181126-17857-1lxx83k.rb extconf.rb
+checking for unistd.h... yes
+checking for sys/select.h... yes
+checking for port_event_t in poll.h... no
+checking for sys/epoll.h... yes
+checking for sys/event.h... no
+checking for port_event_t in port.h... no
+checking for sys/resource.h... yes
+creating Makefile
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.5.0/gems/nio4r-2.3.1/ext/nio4r
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.5.0/gems/nio4r-2.3.1/ext/nio4r
+make "DESTDIR="
+compiling bytebuffer.c
+compiling monitor.c
+compiling nio4r_ext.c
+nio4r_ext.c:7 から include されたファイル中:
+../libev/ev.c:488:48: 警告: コメント内に "/*" があります
+In file included from nio4r_ext.c:7:
+../libev/ev.c: In function ‘ecb_binary32_to_binary16’:
+../libev/ev.c:1274: 警告: 符合付きと符合無しの整数式同士の比較です
+In file included from nio4r_ext.c:7:
+../libev/ev.c: トップレベル:
+../libev/ev.c:1836: 警告: ‘ev_default_loop_ptr’ initialized and declared ‘extern’
+../libev/ev.c: In function ‘array_nextsize’:
+../libev/ev.c:1945: 警告: 符合付きと符合無しの整数式同士の比較です
+In file included from ../libev/ev.c:2710,
+                 from nio4r_ext.c:7:
+../libev/ev_poll.c: In function ‘poll_poll’:
+../libev/ev_poll.c:111: 警告: カンマ演算子の左側の式に効力がありません
+In file included from nio4r_ext.c:7:
+../libev/ev.c: In function ‘verify_watcher’:
+../libev/ev.c:3123: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3126: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘verify_heap’:
+../libev/ev.c:3137: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3138: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3139: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘array_verify’:
+../libev/ev.c:3151: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_verify’:
+../libev/ev.c:3169: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3182: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3186: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3187: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘timers_reify’:
+../libev/ev.c:3371: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘periodics_reify’:
+../libev/ev.c:3434: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_backend_poll’:
+../libev/ev.c:3580: 警告: no return statement in function returning non-void
+../libev/ev.c: In function ‘ev_run’:
+../libev/ev.c:3594: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3750: 警告: passing argument 1 of ‘rb_thread_call_without_gvl’ from incompatible pointer type
+/home/vagrant/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/thread.h:28: note: expected ‘void * (*)(void *)’ but argument is of type ‘VALUE (*)(void *)’
+../libev/ev.c:3762: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_io_start’:
+../libev/ev.c:3937: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3938: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3947: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_io_stop’:
+../libev/ev.c:3963: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_timer_start’:
+../libev/ev.c:3984: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_timer_stop’:
+../libev/ev.c:4013: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_periodic_start’:
+../libev/ev.c:4077: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_periodic_stop’:
+../libev/ev.c:4110: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_signal_start’:
+../libev/ev.c:4149: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:4152: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_child_start’:
+../libev/ev.c:4271: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_embed_start’:
+../libev/ev.c:4856: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:5206:27: 警告: コメント内に "/*" があります
+../libev/ev.c:5207:27: 警告: コメント内に "/*" があります
+nio4r_ext.c: In function ‘Init_nio4r_ext’:
+nio4r_ext.c:15: 警告: passing argument 1 of ‘ev_set_allocator’ from incompatible pointer type
+../libev/ev.c:1738: note: expected ‘void * (*)(void *, long int)’ but argument is of type ‘void * (*)(void *, size_t)’
+トップレベル:
+cc1: 警告: unrecognized command line option "-Wno-self-assign"
+cc1: 警告: unrecognized command line option "-Wno-constant-logical-operand"
+cc1: 警告: unrecognized command line option "-Wno-parentheses-equality"
+cc1: 警告: unrecognized command line option "-Wno-tautological-compare"
+compiling selector.c
+linking shared-object nio4r_ext.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.5.0/gems/nio4r-2.3.1/ext/nio4r
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20181126-17857-c8ukve

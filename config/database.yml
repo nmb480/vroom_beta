@@ -50,6 +50,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: vroomapp_production
   username: vroomapp
   password: <%= ENV['VROOMAPP_DATABASE_PASSWORD'] %>

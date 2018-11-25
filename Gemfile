@@ -72,3 +72,8 @@ gem "whenever", require: false
 #ページネーション
 gem 'kaminari'
 gem 'devise'
+
+#heroku用
+group :production do
+  gem 'pg', '0.21.0'
+end

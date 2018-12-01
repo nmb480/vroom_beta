@@ -49,9 +49,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  <<: *default
   database: vroomapp_production
   username: vroomapp
   password: <%= ENV['VROOMAPP_DATABASE_PASSWORD'] %>

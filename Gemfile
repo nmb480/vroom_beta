@@ -76,5 +76,5 @@ gem 'devise'
 #heroku用
 group :production do
   gem 'pg', '0.21.0'
-  gem 'rails_12factor'
 end
+gem 'rails_12factor', group: :production

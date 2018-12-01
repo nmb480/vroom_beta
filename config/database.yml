@@ -50,6 +50,4 @@ test:
 #
 production:
   <<: *default
-  database: vroomapp_production
-  username: vroomapp
-  password: <%= ENV['VROOMAPP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

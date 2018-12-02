@@ -1,0 +1,48 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/msgpack-1.2.4/ext/msgpack
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-8s36gl.rb extconf.rb
+checking for ruby/st.h... yes
+checking for st.h... yes
+checking for rb_str_replace() in ruby.h... yes
+checking for rb_intern_str() in ruby.h... yes
+checking for rb_sym2str() in ruby.h... yes
+checking for rb_str_intern() in ruby.h... yes
+checking for rb_block_lambda() in ruby.h... yes
+checking for rb_hash_dup() in ruby.h... yes
+checking for rb_hash_clear() in ruby.h... yes
+creating Makefile
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/msgpack-1.2.4/ext/msgpack
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/msgpack-1.2.4/ext/msgpack
+make "DESTDIR="
+compiling buffer.c
+compiling buffer_class.c
+compiling extension_value_class.c
+compiling factory_class.c
+compiling packer.c
+packer.c: In function ‘msgpack_packer_write_other_value’:
+packer_ext_registry.h:85: 警告: ‘lookup_class’ may be used uninitialized in this function
+packer_ext_registry.h:85: note: ‘lookup_class’ was declared here
+トップレベル:
+cc1: 警告: unrecognized command line option "-Wno-self-assign"
+cc1: 警告: unrecognized command line option "-Wno-constant-logical-operand"
+cc1: 警告: unrecognized command line option "-Wno-parentheses-equality"
+cc1: 警告: unrecognized command line option "-Wno-tautological-compare"
+compiling packer_class.c
+compiling packer_ext_registry.c
+compiling rbinit.c
+compiling rmem.c
+compiling unpacker.c
+compiling unpacker_class.c
+unpacker_class.c:219: 警告: ‘Unpacker_peek_next_type’ defined but not used
+cc1: 警告: unrecognized command line option "-Wno-self-assign"
+cc1: 警告: unrecognized command line option "-Wno-constant-logical-operand"
+cc1: 警告: unrecognized command line option "-Wno-parentheses-equality"
+cc1: 警告: unrecognized command line option "-Wno-tautological-compare"
+compiling unpacker_ext_registry.c
+linking shared-object msgpack/msgpack.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/msgpack-1.2.4/ext/msgpack
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20181202-28967-ruw4u9/msgpack

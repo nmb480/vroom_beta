@@ -1,0 +1,15 @@
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-1k54kcq.rb extconf.rb
+creating Makefile
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20181202-28967-1kp05hh

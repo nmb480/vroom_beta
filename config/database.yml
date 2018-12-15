@@ -51,4 +51,4 @@ test:
 production:
   <<: *default
   database: vroomapp_production
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['PRODUCTION_DATABASE_URL'] %>

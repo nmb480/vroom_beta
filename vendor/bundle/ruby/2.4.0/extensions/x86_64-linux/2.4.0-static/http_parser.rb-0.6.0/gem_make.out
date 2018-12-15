@@ -1,5 +1,5 @@
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
-/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-bxrfuv.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181209-25497-u0o5hn.rb extconf.rb
 creating Makefile
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
@@ -33,4 +33,4 @@ linking shared-object ruby_http_parser.so
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20181202-28967-19ddlty
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20181209-25497-1rz78tn

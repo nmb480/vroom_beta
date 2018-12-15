@@ -1,5 +1,5 @@
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
-/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-1k15pjc.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181209-25497-5s6xxa.rb extconf.rb
 creating Makefile
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
@@ -12,4 +12,4 @@ linking shared-object bindex/cruby.so
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.so ./.gem.20181202-28967-1u8v74q/bindex
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20181209-25497-ohtfbs/bindex

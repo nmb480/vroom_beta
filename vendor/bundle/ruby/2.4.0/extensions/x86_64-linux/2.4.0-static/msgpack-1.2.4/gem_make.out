@@ -1,5 +1,5 @@
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/msgpack-1.2.4/ext/msgpack
-/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-8s36gl.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181209-25497-uj0flh.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -45,4 +45,4 @@ linking shared-object msgpack/msgpack.so
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/msgpack-1.2.4/ext/msgpack
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 msgpack.so ./.gem.20181202-28967-ruw4u9/msgpack
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20181209-25497-gkoqif/msgpack

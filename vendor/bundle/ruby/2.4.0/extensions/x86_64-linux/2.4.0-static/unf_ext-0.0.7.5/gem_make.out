@@ -1,5 +1,5 @@
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/unf_ext-0.0.7.5/ext/unf_ext
-/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-1tqe6rs.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181209-25497-ozrwex.rb extconf.rb
 checking for -lstdc++... yes
 creating Makefile
 
@@ -20,4 +20,4 @@ linking shared-object unf_ext.so
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/unf_ext-0.0.7.5/ext/unf_ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20181202-28967-k392wh
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20181209-25497-1vnc8ar

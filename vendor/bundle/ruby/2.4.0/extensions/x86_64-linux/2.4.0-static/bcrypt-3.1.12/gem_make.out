@@ -1,5 +1,5 @@
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.12/ext/mri
-/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181202-28967-hhv2cz.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181209-25497-pu6ak5.rb extconf.rb
 creating Makefile
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.12/ext/mri
@@ -16,4 +16,4 @@ linking shared-object bcrypt_ext.so
 
 current directory: /home/vagrant/vroom/vroomapp/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.12/ext/mri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20181202-28967-lrjwun
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20181209-25497-35wfel
